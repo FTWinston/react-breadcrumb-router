@@ -1,7 +1,7 @@
 {
-  "name": "react-breadcrumbs-demo",
+  "name": "react-breadcrumb-router-demo",
   "version": "0.1.0",
-  "description": "A small demo of the react-breadcrumbs package.",
+  "description": "A small demo of the react-breadcrumb-router package.",
   "main": "n/a",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/svenanders/react-breadcrumbs.git"
+    "url": "git+https://github.com/FTWinston/react-breadcrumb-router.git"
   },
   "keywords": [
-    "react-breadcrumbs",
+    "react-breadcrumb-router",
     "demo"
   ],
-  "author": "Greg Venech",
-  "license": "ISC",
+  "author": "FTWinston",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/svenanders/react-breadcrumbs/issues"
+    "url": "https://github.com/FTWinston/react-breadcrumb-router/issues"
   },
-  "homepage": "https://github.com/svenanders/react-breadcrumbs#readme",
+  "homepage": "https://github.com/FTWinston/react-breadcrumb-router#readme",
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",

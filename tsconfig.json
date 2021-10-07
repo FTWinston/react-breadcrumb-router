@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es6",
+    "allowJs": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts"]
+}

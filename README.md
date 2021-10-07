@@ -1,4 +1,4 @@
-# React Breadcrumbs
+# React Breadcrumb Router
 
 [React][1] component use to generate a breadcrumb trail (compatible with
 [React Router][2]).
@@ -6,14 +6,10 @@
 ## Installation
 
 ```sh
-npm install --save react-breadcrumbs
+npm install --save react-breadcrumb-router
 ```
 
-Note: this version is only compatible with React-Router v4 and up. If you
-need a version that is compatible with React-Router v3 and below, use
-```
-npm install --save react-breadcrumbs@1.6.x
-```
+Note: this version is compatible with React-Router v4 and up.
 
 ## Demo
 
