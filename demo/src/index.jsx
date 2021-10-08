@@ -1,19 +1,18 @@
 // Import External Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 
 // Import Components
 import App from './app.jsx';
-import CrumbRoute from './crumb-route.jsx';
+import { BreadcrumbRoute, BreadcrumbRouter } from '../../src/index.js';
 
 // Define element and render method
 let element = document.getElementById('app'),
 	render = Root => {
 		ReactDOM.render((
-			<BrowserRouter>
-				<CrumbRoute title="Home" path="/" component={ Root } />
-			</BrowserRouter>
+			<BreadcrumbRouter>
+				<BreadcrumbRoute title="Home" path="/" component={ Root } />
+			</BreadcrumbRouter>
 		), element);
 	}
 

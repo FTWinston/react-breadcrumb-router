@@ -3,8 +3,7 @@ import React from 'react';
 import { Switch, NavLink, Route } from 'react-router-dom';
 
 // Import Components
-import { Breadcrumbs } from '../../src/index.js';
-import CrumbRoute from './crumb-route.jsx'
+import { Breadcrumbs, BreadcrumbRoute } from '../../src/index.js';
 import Friends from './friends.jsx'
 import Events from './events.jsx'
 import Locations from './locations.jsx'
@@ -40,10 +39,10 @@ export default class App extends React.Component {
           <div className="demo__content">
             <Switch>
               <Route path="/" exact render={ props => <span>Home content...</span> } />
-              <CrumbRoute title="Friends" path="/friends" component={ Friends } />
-              <CrumbRoute title="Events" path="/events" component={ Events } />
-              <CrumbRoute title="Locations" path="/locations" component={ Locations } />
-              <CrumbRoute title="404 Not Found" render={ props => <span>Page not found...</span> } />
+              <BreadcrumbRoute title="Friends" path="/friends" component={ Friends } />
+              <BreadcrumbRoute title="Events" path="/events" component={ Events } />
+              <BreadcrumbRoute title="Locations" path="/locations" component={ Locations } />
+              <BreadcrumbRoute title="404 Not Found" render={ props => <span>Page not found...</span> } />
             </Switch>
           </div>
         </main>

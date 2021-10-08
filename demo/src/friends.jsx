@@ -3,7 +3,7 @@ import React from 'react'
 import { Switch, NavLink } from 'react-router-dom'
 
 // Import Components
-import CrumbRoute from './crumb-route.jsx'
+import { BreadcrumbRoute } from '../../src/index.js';
 
 // Define a small friend page
 const Friend = props => (
@@ -30,10 +30,10 @@ export default ({
 		</ul>
 
 		<Switch>
-			<CrumbRoute title="Alice" path={ `${match.url}/alice` } render={ props => <Friend name="Alice" /> } />
-			<CrumbRoute title="Frank" path={ `${match.url}/frank` } render={ props => <Friend name="Frank" /> } />
-			<CrumbRoute title="Jane" path={ `${match.url}/jane` } render={ props => <Friend name="Jane" /> } />
-			<CrumbRoute title="Matt" path={ `${match.url}/matt` } render={ props => <Friend name="Matt" /> } />
+			<BreadcrumbRoute title="Alice" path={ `${match.url}/alice` } render={ props => <Friend name="Alice" /> } />
+			<BreadcrumbRoute title="Frank" path={ `${match.url}/frank` } render={ props => <Friend name="Frank" /> } />
+			<BreadcrumbRoute title="Jane" path={ `${match.url}/jane` } render={ props => <Friend name="Jane" /> } />
+			<BreadcrumbRoute title="Matt" path={ `${match.url}/matt` } render={ props => <Friend name="Matt" /> } />
 		</Switch>
 	</div>
 )

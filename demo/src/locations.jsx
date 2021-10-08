@@ -3,7 +3,7 @@ import React from 'react'
 import { Switch, NavLink } from 'react-router-dom'
 
 // Import Components
-import CrumbRoute from './crumb-route.jsx'
+import { BreadcrumbRoute } from '../../src/index.js';
 
 // Define a small event page
 const Location = props => (
@@ -28,8 +28,8 @@ export default ({
 		</ul>
 
 		<Switch>
-			<CrumbRoute title="Mexico" path={ `${match.url}/mexico` } render={ props => <Location name="Mexico" /> } />
-			<CrumbRoute title="China" path={ `${match.url}/china` } render={ props => <Location name="China" /> } />
+			<BreadcrumbRoute title="Mexico" path={ `${match.url}/mexico` } render={ props => <Location name="Mexico" /> } />
+			<BreadcrumbRoute title="China" path={ `${match.url}/china` } render={ props => <Location name="China" /> } />
 		</Switch>
 	</div>
 )
