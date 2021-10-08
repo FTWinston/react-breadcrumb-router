@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { CrumbContext } from './BreadcrumbRouter'
 
-interface Props {
+export interface Props {
     className?: string,
     itemElement?: React.ComponentType | keyof JSX.IntrinsicElements;
 }

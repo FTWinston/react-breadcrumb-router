@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CrumbContext } from './BreadcrumbRouter'
-import { IdentifiableCrumb } from './crumb';
 
-interface Props {
+export interface Props {
     className?: string,
     separator?: React.ReactElement | string,
     includeLast?: boolean;

@@ -3,7 +3,7 @@ import { v4 as UUID } from 'uuid'
 import { CrumbContext } from './BreadcrumbRouter'
 import { Crumb } from './crumb';
 
-interface Props {
+export interface Props {
 	data: Crumb,
 	hidden?: boolean,
 }
