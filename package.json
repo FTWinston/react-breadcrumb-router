@@ -4,7 +4,7 @@
   "description": "Automatic breadcrumbs for react-router",
   "author": "FTWinston",
   "homepage": "https://github.com/FTWinston/react-breadcrumb-router",
-  "license": "MIT",
+  "license": "ISC",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
