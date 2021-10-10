@@ -17,7 +17,7 @@ export const Breadcrumbs: React.FC<Props> = props => {
 
     const Item = props.itemElement ?? 'span';
 
-    const separator = props.separator ?? '>';
+    const separator = props.separator;
 
     crumbs = crumbs.sort((a, b) => a.pathname.length - b.pathname.length);
 
@@ -45,7 +45,7 @@ export const Breadcrumbs: React.FC<Props> = props => {
                         { crumb.title }
                     </NavLink>
 
-                    { i < crumbs.length - 1 ? (
+                    { separator !== undefined && i < crumbs.length - 1 ? (
                         <span className="breadcrumbs__separator">{separator}</span>
                     ) : null }
                 </Item>
