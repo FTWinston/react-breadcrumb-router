@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { CrumbContext } from './BreadcrumbRouter'
+import { IdentifiableCrumb } from './crumb';
 
 export interface Props {
     className?: string,
@@ -12,12 +13,16 @@ export const Title: React.FC<Props> = props => {
     const Item = props.itemElement ?? 'span';
 
     const longestPathCrumb = crumbs.reduce(
-        (a, b) => a.path.length > b.path.length ? a : b
+        (a: IdentifiableCrumb, b: IdentifiableCrumb) => a.path.length > b.path.length ? a : b, null
     );
 
     const className = props.className === undefined
         ? 'breadcrumbTitle'
         : 'breadcrumbTitle ' + props.className;
+
+    if (longestPathCrumb === null) {
+        return null;
+    }
 
     return (
         <Item className={className}>
