@@ -22,7 +22,7 @@ export const Breadcrumbs: React.FC<Props> = props => {
     crumbs = crumbs.sort((a, b) => a.path.length - b.path.length);
 
     if (props.includeLast === false) {
-        crumbs.splice(crumbs.length - 1, 1);
+        crumbs = crumbs.slice(0, crumbs.length - 1);
     }
 
     const className = props.className === undefined

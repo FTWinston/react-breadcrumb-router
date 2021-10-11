@@ -12,17 +12,17 @@ export const Title: React.FC<Props> = props => {
 
     const Item = props.itemElement ?? 'span';
 
+    if (crumbs.length === 0) {
+        return null;
+    }
+
     const longestPathCrumb = crumbs.reduce(
-        (a: IdentifiableCrumb, b: IdentifiableCrumb) => a.path.length > b.path.length ? a : b, null
+        (a, b) => a.path.length > b.path.length ? a : b
     );
 
     const className = props.className === undefined
         ? 'breadcrumbTitle'
         : 'breadcrumbTitle ' + props.className;
-
-    if (longestPathCrumb === null) {
-        return null;
-    }
 
     return (
         <Item className={className}>
