@@ -12,7 +12,7 @@ export const Title: React.FC<Props> = props => {
     const Item = props.itemElement ?? 'span';
 
     const longestPathCrumb = crumbs.reduce(
-        (a, b) => a.pathname.length > b.pathname.length ? a : b
+        (a, b) => a.path.length > b.path.length ? a : b
     );
 
     const className = props.className === undefined

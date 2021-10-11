@@ -1,5 +1,5 @@
 export interface Crumb {
-    pathname: string;
+    path: string;
     search?: string;
     title: React.ReactElement | string;
 };

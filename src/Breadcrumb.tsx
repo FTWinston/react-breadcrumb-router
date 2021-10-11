@@ -30,7 +30,7 @@ export const Breadcrumb: React.FC<Props> = props => {
 		}
 		
 		dispatch({ type: 'UPDATE_CRUMB', id, crumb: props });
-	}, [props.pathname, props.search]);
+	}, [props.path, props.search]);
 
 	return <> {props.children} </>;
 }

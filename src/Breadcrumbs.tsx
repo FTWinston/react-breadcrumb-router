@@ -19,7 +19,7 @@ export const Breadcrumbs: React.FC<Props> = props => {
 
     const separator = props.separator;
 
-    crumbs = crumbs.sort((a, b) => a.pathname.length - b.pathname.length);
+    crumbs = crumbs.sort((a, b) => a.path.length - b.path.length);
 
     if (props.includeLast === false) {
         crumbs.splice(crumbs.length - 1, 1);

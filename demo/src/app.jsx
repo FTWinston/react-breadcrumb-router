@@ -37,7 +37,7 @@ export default class App extends React.Component {
           </ul>
 
           <div className="demo__content">
-            <Breadcrumb title="Home" pathname="/" />
+            <Breadcrumb title="Home" path="/" />
 
             <Switch>
               <Route path="/" exact render={ props => <span>Home content...</span> } />

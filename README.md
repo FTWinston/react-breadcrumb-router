@@ -50,7 +50,7 @@ Though it renders nothing directly, a `<Breadcrumb>` declaratively adds a crumb 
 It can occasionally be convenient to render one sepaseparately to any `<Route>` components.
 
 - `title` (string|component) Text or componet to display for this breadcrumb.
-- `pathname` (string): URL path represented by this breadcrumb.
+- `path` (string): URL path represented by this breadcrumb.
 - `search` (string): Optional URL search (query string) represented by this breadcrumb.
 - `hidden` (bool): Hide an individual breadcrumb (rarely needed).
 
