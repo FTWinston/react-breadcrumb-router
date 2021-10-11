@@ -12,6 +12,7 @@ export const BreadcrumbRoute: React.FC<Props> = ({
 	includeSearch = false,
     title,
 	render,
+    children,
 	...props
 }) => (
     <Route { ...props } render={ routeProps => (
@@ -22,7 +23,7 @@ export const BreadcrumbRoute: React.FC<Props> = ({
         }}>
             { Component
                 ? <Component { ...routeProps } />
-                : render?.(routeProps) ?? props.children
+                : render?.(routeProps) ?? children
             }
         </Breadcrumb>
     )} />
