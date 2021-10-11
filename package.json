@@ -9,7 +9,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && babel src -d dist --extensions .ts,.tsx",
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "tidy": "npx prettier --tab-width 4 --single-quote true --write src",
     "release": "standard-version"
   },
