@@ -3,7 +3,7 @@ import React from 'react'
 import { Switch, NavLink } from 'react-router-dom'
 
 // Import Components
-import { BreadcrumbRoute } from '../../src/index.js';
+import { BreadcrumbRoute } from 'react-breadcrumb-router';
 
 // Define a small event page
 const Location = props => (

@@ -2,10 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   devtool: 'source-map',
   entry: './src/index.jsx',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         use: 'babel-loader',
@@ -20,9 +21,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -30,9 +28,10 @@ module.exports = {
   devServer: {
     port: 3030,
     hot: true,
-    inline: true,
     compress: true,
     historyApiFallback: true,
-    contentBase: 'dist/'
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    }
   }
 }

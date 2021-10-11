@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, NavLink, Route } from 'react-router-dom';
 
 // Import Components
-import { Breadcrumbs, BreadcrumbRoute } from '../../src/index.js';
+import { Breadcrumbs, Breadcrumb, BreadcrumbRoute } from 'react-breadcrumb-router';
 import Friends from './friends.jsx'
 import Events from './events.jsx'
 import Locations from './locations.jsx'
@@ -37,6 +37,8 @@ export default class App extends React.Component {
           </ul>
 
           <div className="demo__content">
+            <Breadcrumb title="Home" pathname="/" />
+
             <Switch>
               <Route path="/" exact render={ props => <span>Home content...</span> } />
               <BreadcrumbRoute title="Friends" path="/friends" component={ Friends } />

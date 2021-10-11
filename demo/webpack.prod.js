@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: './src/index.jsx',
   module: {
     rules: [
@@ -13,6 +14,10 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: 'css-loader'
       }
     ]
   },

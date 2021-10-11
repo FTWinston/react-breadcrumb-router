@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 
 // Import Components
 import App from './app.jsx';
-import { BreadcrumbRoute, BreadcrumbRouter } from '../../src/index.js';
+import { BreadcrumbRouter } from 'react-breadcrumb-router';
 
 // Define element and render method
 let element = document.getElementById('app'),
 	render = Root => {
 		ReactDOM.render((
 			<BreadcrumbRouter>
-				<BreadcrumbRoute title="Home" path="/" component={ Root } />
+				<Root />
 			</BreadcrumbRouter>
 		), element);
 	}
