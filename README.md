@@ -46,19 +46,13 @@ Its props match that of the `<Route>` component, with the following additions:
 
 #### Breadcrumb
 
-- `data` (object): An extended [location descriptor][4]. See below...
+Though it renders nothing directly, a `<Breadcrumb>` declaratively adds a crumb into the breadcrumb trail.
+It can occasionally be convenient to render one sepaseparately to any `<Route>` components.
+
+- `title` (string|component) Text or componet to display for this breadcrumb.
+- `pathname` (string): URL path represented by this breadcrumb.
+- `search` (string): Optional URL search (query string) represented by this breadcrumb.
 - `hidden` (bool): Hide an individual breadcrumb (rarely needed).
-
-The `data` object allows any valid [location descriptor][4] key (e.g.
-`pathname` or `search`) as well as a `title` prop:
-
-``` js
-{
-  title: 'Home', // Any valid `PropTypes.node`
-  pathname: '/',
-  // ... any other location descriptor values
-}
-```
 
 The fact that the `title` can be any valid `PropTypes.node` allows for a huge
 amount of customization. The following values are all valid:
@@ -73,12 +67,12 @@ title: <CustomComponent title="Home" icon="house" />
 
 #### Breadcrumbs
 
-This component displays currently active breadcrumbs. Its various elements use [BEM][7] css classes,
+This component displays currently active breadcrumbs. Its various elements use [BEM][6] css classes,
 with the root block name set to `breadcrumbs`.
 
 - `className` (string): CSS class to apply to the breadcrumb container.
 - `separator` (string|component): Optional content to render between breadcrumbs.
-- `includeLast` (bool): Whether the last breadcrumb should be rendered here. Defaults to true, set to false if `<Title>` component is also being used.
+- `includeLast` (bool): Whether the last breadcrumb should be rendered here. Defaults to true, set to false if a `<Title>` component is also being used.
 - `rootElement`: (string|component type): Element to use for rendering the breadcrumb container.
 - `itemElement`: (string|component type): Element to use for rendering individual breadcrumbs.
   
@@ -91,12 +85,11 @@ This component displays only the lowest-level breadcrumb that is currently activ
 
 ## Authors
 
-This project was adapted from [`react-breadcrumbs`][5], and would not have been possible without the contributions of [that package's authors][6].
+This project was adapted from [`react-breadcrumbs`][4], and would not have been possible without the contributions of [that package's authors][5].
 
 [1]: https://facebook.github.io/react
 [2]: https://github.com/rackt/react-router
 [3]: https://github.com/FTWinston/react-breadcrumb-router/tree/master/demo
-[4]: https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/location.md
-[5]: https://github.com/svenanders/react-breadcrumbs
-[6]: https://github.com/svenanders/react-breadcrumbs/tree/master/AUTHORS
-[7]: http://getbem.com/
+[4]: https://github.com/svenanders/react-breadcrumbs
+[5]: https://github.com/svenanders/react-breadcrumbs/tree/master/AUTHORS
+[6]: http://getbem.com/

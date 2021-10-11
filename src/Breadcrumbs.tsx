@@ -37,11 +37,8 @@ export const Breadcrumbs: React.FC<Props> = props => {
                         exact
                         className="breadcrumbs__crumb"
                         activeClassName="breadcrumbs__crumb--active"
-                        to={{
-                            pathname: crumb.pathname,
-                            search: crumb.search,
-                            state: crumb.state
-                        }}>
+                        to={crumb}
+                    >
                         { crumb.title }
                     </NavLink>
 

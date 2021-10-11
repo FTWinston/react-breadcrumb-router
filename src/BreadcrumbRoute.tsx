@@ -16,11 +16,11 @@ export const BreadcrumbRoute: React.FC<Props> = ({
 	...props
 }) => (
     <Route { ...props } render={ routeProps => (
-        <Breadcrumb data={{
-            title,
-            pathname: routeProps.match.url,
-            search: includeSearch ? routeProps.location.search : undefined
-        }}>
+        <Breadcrumb
+            title={title}
+            pathname={routeProps.match.url}
+            search={includeSearch ? routeProps.location.search : undefined}
+        >
             { Component
                 ? <Component { ...routeProps } />
                 : render?.(routeProps) ?? children
