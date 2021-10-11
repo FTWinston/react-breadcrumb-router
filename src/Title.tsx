@@ -10,7 +10,7 @@ export interface Props {
 export const Title: React.FC<Props> = props => {
 	let { crumbs } = useContext(CrumbContext);
 
-    const Item = props.itemElement ?? 'span';
+    const Item = props.itemElement ?? 'h1';
 
     if (crumbs.length === 0) {
         return null;
