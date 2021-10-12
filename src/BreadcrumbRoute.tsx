@@ -18,7 +18,7 @@ export const BreadcrumbRoute: React.FC<Props> = ({
     <Route { ...props } render={ routeProps => (
         <Breadcrumb
             title={title}
-            path={routeProps.match.url}
+            path={routeProps.match.path}
             search={includeSearch ? routeProps.location.search : undefined}
         >
             { Component
