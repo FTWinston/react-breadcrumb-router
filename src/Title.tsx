@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { CrumbContext } from './BreadcrumbRouter';
-import { IdentifiableCrumb } from './crumb';
 
 export interface Props {
     className?: string;
@@ -17,7 +16,7 @@ export const Title: React.FC<Props> = (props) => {
     }
 
     const longestPathCrumb = crumbs.reduce((a, b) =>
-        a.path.length > b.path.length ? a : b
+        a.pathname.length > b.pathname.length ? a : b
     );
 
     const className =

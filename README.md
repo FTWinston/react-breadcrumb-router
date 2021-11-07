@@ -18,11 +18,8 @@ For react-router v4/v5 support, please use version 5 of this package.
 This package's `<BreadcrumbRouter>` component should be used in place of the
 `<BrowserRouter>` component from `react-router-dom`.
 
-Routes that should generate breadcrumbs should use the `<BreadcrumbRoute>` component
-instead of the `<Route>` component.
-
-The `<Breadcrumb>` component can also be used for a crumb that doesn't directly
-relate to a react-router `<Route>`.
+Any component that should generate breadcrumbs should render a `<Breadcrumb>` component in its
+output. This component displays nothing, but registers the crumb with `react-breadcrumb-router`.
 
 Breadcrumbs are rendered by the `<Breadcrumbs>` component. The single "breadcrumb"
 for the current page can be rendered by the `<Title>` component.
@@ -36,25 +33,11 @@ See the [`/demo`][3] directory for a complete example.
 This component renders a `<BrowserRouter>` along with a react context that
 `react-breadcrumb-router` needs in order to function.
 
-#### BreadcrumbRoute
-
-A convenience component that combines a `<Route>` component from `react-router-dom`
-with a `<Breadcrumb>` component.
-
-Its props match that of the `<Route>` component, with the following additions:
-
-- `title` (string|component): Value to display for this breadcrumb when this breadcrumb is being rendered.
-- `includeSearch` (bool): Whether search string (aka parameters) should be included in links to this breadcrumb.
-
 #### Breadcrumb
 
 Though it renders nothing directly, a `<Breadcrumb>` declaratively adds a crumb into the breadcrumb trail.
-It can occasionally be convenient to render one sepaseparately to any `<Route>` components.
 
-- `title` (string|component) Text or componet to display for this breadcrumb.
-- `path` (string): URL path represented by this breadcrumb.
-- `search` (string): Optional URL search (query string) represented by this breadcrumb.
-- `hidden` (bool): Hide an individual breadcrumb (rarely needed).
+- `title` (string|component) Text or component to display for this breadcrumb.
 
 The fact that the `title` can be any valid `PropTypes.node` allows for a huge
 amount of customization. The following values are all valid:

@@ -1,6 +1,6 @@
-export interface Crumb {
-    path: string;
-    search?: string;
+import { Path } from 'react-router-dom';
+
+export interface Crumb extends Path {
     title: React.ReactElement | string;
 }
 
