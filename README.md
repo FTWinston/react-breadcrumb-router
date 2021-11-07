@@ -8,7 +8,7 @@ A collection of [React][1] components used to generate a breadcrumb trail, for u
 npm install --save react-breadcrumb-router
 ```
 
-Note: Version 6 of this package has peer dependencies of `react-router-dom` v6 and `react` v15+.
+Note: Version 6 of this package has peer dependencies of `react-router-dom` v6 and `react` v16.8+.
 Its only direct dependency is `uuid`.
 
 For react-router v4/v5 support, please use version 5 of this package.
@@ -18,8 +18,8 @@ For react-router v4/v5 support, please use version 5 of this package.
 This package's `<BreadcrumbRouter>` component should be used in place of the
 `<BrowserRouter>` component from `react-router-dom`.
 
-Any component that should generate breadcrumbs should call the `useBreadcrumb` hook (Or render
-a `<Breadcrumb>` component) in its output. This registers a crumb with `react-breadcrumb-router`.
+Any component that should generate breadcrumbs should call the `useBreadcrumb` hook.
+(Or render a `<Breadcrumb>` component) in its output.
 
 Breadcrumbs are rendered by the `<Breadcrumbs>` component. The single "breadcrumb"
 for the current page can be rendered by the `<Title>` component.
@@ -35,7 +35,8 @@ This component renders a `<BrowserRouter>` along with a react context that
 
 #### useBreadcrumb
 
-This hook adds a crumb into the breadcrumb trail.
+This hook adds a crumb into the breadcrumb trail. It will be removed again if
+the component calling this hook stops rendering.
 
 - `title` (string|component) Text or component to display for this breadcrumb.
 
