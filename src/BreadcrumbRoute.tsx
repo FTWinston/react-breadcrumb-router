@@ -1,34 +1,32 @@
 import React from 'react';
-import { Route, RouteProps } from 'react-router-dom';
+import { Route, RouteProps, useLocation } from 'react-router-dom';
 import { Breadcrumb } from './Breadcrumb';
 
-export type Props = RouteProps<string> & {
+export type Props = RouteProps & {
     title: React.ReactElement | string;
     includeSearch?: boolean; // Hmm, do we want this?
 };
 
 export const BreadcrumbRoute: React.FC<Props> = ({
-    component: Component,
+    element,
     includeSearch = false,
     title,
-    render,
     children,
     ...props
-}) => (
-    <Route
-        {...props}
-        render={(routeProps) => (
+}) => {
+    const CrumbElement = () => {
+        const location = useLocation();
+
+        return (
             <Breadcrumb
                 title={title}
-                path={routeProps.match.path}
-                search={includeSearch ? routeProps.location.search : undefined}
+                path={location.pathname}
+                search={includeSearch ? location.search : undefined}
             >
-                {Component ? (
-                    <Component {...routeProps} />
-                ) : (
-                    render?.(routeProps) ?? children
-                )}
+                {element ?? children}
             </Breadcrumb>
-        )}
-    />
-);
+        );
+    };
+
+    return <Route {...props} element={<CrumbElement />} />;
+};
