@@ -1,39 +1,34 @@
 // Import External Dependencies
 import React from 'react'
-import { Switch, NavLink } from 'react-router-dom'
+import { Route, Routes, NavLink } from 'react-router-dom'
 
 // Import Components
-import { BreadcrumbRoute } from 'react-breadcrumb-router';
+import { Breadcrumb } from 'react-breadcrumb-router';
 
 // Define a small event page
 const Event = props => (
 	<div className="event">
+		<Breadcrumb title={props.name} />
 		<h3>{ props.name }</h3>
 		<p>More information about the { props.name }...</p>
 	</div>
 )
 
 // Create and export the component
-export default ({
-	location,
-	match,
-	...props
-}) => (
+export default () => (
 	<div className="friends">
+		<Breadcrumb title="Events" />
+		
 		<h2>Upcoming Events</h2>
 		<p>These events are coming up soon...</p>
 		<ul>
-			<li><NavLink to={ `${match.url}/dance` }>Dance</NavLink></li>
-			<li><NavLink to={ `${match.url}/cookout` }>Cookout</NavLink></li>
+			<li><NavLink to="dance">Dance</NavLink></li>
+			<li><NavLink to="cookout">Cookout</NavLink></li>
 		</ul>
 
-		<Switch>
-			<BreadcrumbRoute title="Dance" path={ `${match.url}/dance` }>
-				<Event name="Dance" />
-			</BreadcrumbRoute>
-			<BreadcrumbRoute title="Cookout" path={ `${match.url}/cookout` }>
-				<Event name="Cookout" />
-			</BreadcrumbRoute>
-		</Switch>
+		<Routes>
+			<Route path="dance" element={<Event name="Dance" />} />
+			<Route path="cookout" element={<Event name="Cookout" />} />
+		</Routes>
 	</div>
 )
