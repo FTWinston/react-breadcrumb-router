@@ -1,5 +1,5 @@
-import React, { useMemo, useReducer } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import React, { useMemo, useReducer } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { IdentifiableCrumb } from './crumb';
 import { Action, reducer } from './reducer';
 
@@ -10,12 +10,12 @@ interface ContextState {
 
 export const CrumbContext = React.createContext<ContextState>({
     crumbs: [],
-    dispatch: () => {}
+    dispatch: () => {},
 });
 
-export const BreadcrumbRouter: React.FC = props => {
+export const BreadcrumbRouter: React.FC = (props) => {
     const [crumbs, dispatch] = useReducer(reducer, []);
-    
+
     const contextValue = useMemo(() => {
         return { crumbs, dispatch };
     }, [crumbs, dispatch]);
@@ -27,4 +27,4 @@ export const BreadcrumbRouter: React.FC = props => {
             </CrumbContext.Provider>
         </BrowserRouter>
     );
-}
+};

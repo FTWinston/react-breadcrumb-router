@@ -1,36 +1,42 @@
-import React, { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react'
-import { v4 as UUID } from 'uuid'
-import { CrumbContext } from './BreadcrumbRouter'
+import React, {
+    PropsWithChildren,
+    useContext,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
+import { v4 as UUID } from 'uuid';
+import { CrumbContext } from './BreadcrumbRouter';
 import { Crumb } from './crumb';
 
 export interface Props extends Crumb {
-	hidden?: boolean,
+    hidden?: boolean;
 }
 
-export const Breadcrumb: React.FC<Props> = props => {
-	const [id] = useState(() => UUID());
+export const Breadcrumb: React.FC<Props> = (props) => {
+    const [id] = useState(() => UUID());
 
-	const { dispatch } = useContext(CrumbContext);
+    const { dispatch } = useContext(CrumbContext);
 
-	useEffect(() => {
-		if (props.hidden) {
-			return;
-		}
-		
-		dispatch({ type: 'ADD_CRUMB', id, crumb: props });
-		return () => dispatch({ type: 'REMOVE_CRUMB', id });
-	}, [props.hidden]);
+    useEffect(() => {
+        if (props.hidden) {
+            return;
+        }
 
-	const firstRender = useRef(true);
+        dispatch({ type: 'ADD_CRUMB', id, crumb: props });
+        return () => dispatch({ type: 'REMOVE_CRUMB', id });
+    }, [props.hidden]);
 
-	useEffect(() => {
-		if (firstRender.current || props.hidden) {
-			firstRender.current = false;
-			return;
-		}
-		
-		dispatch({ type: 'UPDATE_CRUMB', id, crumb: props });
-	}, [props.path, props.search]);
+    const firstRender = useRef(true);
 
-	return <> {props.children} </>;
-}
+    useEffect(() => {
+        if (firstRender.current || props.hidden) {
+            firstRender.current = false;
+            return;
+        }
+
+        dispatch({ type: 'UPDATE_CRUMB', id, crumb: props });
+    }, [props.path, props.search]);
+
+    return <> {props.children} </>;
+};

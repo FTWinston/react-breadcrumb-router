@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
-import { CrumbContext } from './BreadcrumbRouter'
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { CrumbContext } from './BreadcrumbRouter';
 
 export interface Props {
-    className?: string,
-    separator?: React.ReactElement | string,
+    className?: string;
+    separator?: React.ReactElement | string;
     includeLast?: boolean;
     rootElement?: React.ComponentType | keyof JSX.IntrinsicElements;
     itemElement?: React.ComponentType | keyof JSX.IntrinsicElements;
 }
 
-export const Breadcrumbs: React.FC<Props> = props => {
-	let { crumbs } = useContext(CrumbContext);
+export const Breadcrumbs: React.FC<Props> = (props) => {
+    let { crumbs } = useContext(CrumbContext);
 
     const Root = props.rootElement ?? 'nav';
 
@@ -25,26 +25,33 @@ export const Breadcrumbs: React.FC<Props> = props => {
         crumbs = crumbs.slice(0, crumbs.length - 1);
     }
 
-    const className = props.className === undefined
-        ? 'breadcrumbs'
-        : 'breadcrumbs ' + props.className;
+    const className =
+        props.className === undefined
+            ? 'breadcrumbs'
+            : 'breadcrumbs ' + props.className;
 
     return (
         <Root className={className}>
             {crumbs.map((crumb, i) => (
-                <Item key={ crumb.id } className="breadcrumbs__section">
+                <Item key={crumb.id} className="breadcrumbs__section">
                     <NavLink
                         exact
                         className="breadcrumbs__crumb"
                         activeClassName="breadcrumbs__crumb--active"
-                        to={crumb.search ? `${crumb.path}${crumb.search}` : crumb.path}
+                        to={
+                            crumb.search
+                                ? `${crumb.path}${crumb.search}`
+                                : crumb.path
+                        }
                     >
-                        { crumb.title }
+                        {crumb.title}
                     </NavLink>
 
-                    { separator !== undefined && i < crumbs.length - 1 ? (
-                        <span className="breadcrumbs__separator">{separator}</span>
-                    ) : null }
+                    {separator !== undefined && i < crumbs.length - 1 ? (
+                        <span className="breadcrumbs__separator">
+                            {separator}
+                        </span>
+                    ) : null}
                 </Item>
             ))}
             {props.children}

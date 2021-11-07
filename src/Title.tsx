@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
-import { CrumbContext } from './BreadcrumbRouter'
+import React, { useContext } from 'react';
+import { CrumbContext } from './BreadcrumbRouter';
 import { IdentifiableCrumb } from './crumb';
 
 export interface Props {
-    className?: string,
+    className?: string;
     itemElement?: React.ComponentType | keyof JSX.IntrinsicElements;
 }
 
-export const Title: React.FC<Props> = props => {
-	let { crumbs } = useContext(CrumbContext);
+export const Title: React.FC<Props> = (props) => {
+    let { crumbs } = useContext(CrumbContext);
 
     const Item = props.itemElement ?? 'h1';
 
@@ -16,13 +16,14 @@ export const Title: React.FC<Props> = props => {
         return null;
     }
 
-    const longestPathCrumb = crumbs.reduce(
-        (a, b) => a.path.length > b.path.length ? a : b
+    const longestPathCrumb = crumbs.reduce((a, b) =>
+        a.path.length > b.path.length ? a : b
     );
 
-    const className = props.className === undefined
-        ? 'breadcrumbTitle'
-        : 'breadcrumbTitle ' + props.className;
+    const className =
+        props.className === undefined
+            ? 'breadcrumbTitle'
+            : 'breadcrumbTitle ' + props.className;
 
     return (
         <Item className={className}>

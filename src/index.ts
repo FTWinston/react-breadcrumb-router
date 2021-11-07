@@ -1,7 +1,7 @@
 export { Breadcrumb } from './Breadcrumb';
 export { Breadcrumbs } from './Breadcrumbs';
 export { BreadcrumbRoute } from './BreadcrumbRoute';
-export { BreadcrumbRouter } from './BreadcrumbRouter'
+export { BreadcrumbRouter } from './BreadcrumbRouter';
 export { Title } from './Title';
 
 export type { Props as BreadcrumbProps } from './Breadcrumb';
