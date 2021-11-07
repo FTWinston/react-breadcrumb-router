@@ -34,4 +34,4 @@ export function useBreadcrumb(title: React.ReactElement | string) {
 
         dispatch({ type: 'UPDATE_CRUMB', id, crumb });
     }, [crumb]);
-};
+}
