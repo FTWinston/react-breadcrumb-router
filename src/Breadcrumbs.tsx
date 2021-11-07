@@ -35,9 +35,12 @@ export const Breadcrumbs: React.FC<Props> = (props) => {
             {crumbs.map((crumb, i) => (
                 <Item key={crumb.id} className="breadcrumbs__section">
                     <NavLink
-                        exact
-                        className="breadcrumbs__crumb"
-                        activeClassName="breadcrumbs__crumb--active"
+                        end
+                        className={(active) =>
+                            active
+                                ? 'breadcrumbs__crumb--active'
+                                : 'breadcrumbs__crumb'
+                        }
                         to={
                             crumb.search
                                 ? `${crumb.path}${crumb.search}`
