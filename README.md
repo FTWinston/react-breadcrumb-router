@@ -11,7 +11,7 @@ npm install --save react-breadcrumb-router
 Note: Version 6 of this package has peer dependencies of `react-router-dom` v6 and `react` v16.8+.
 Its only direct dependency is `uuid`.
 
-For react-router v4/v5 support, please use version 5 of this package.
+For react-router v4/v5 support, please use [version 5][7] of this package.
 
 ## Usage
 
@@ -84,3 +84,4 @@ This project was adapted from [`react-breadcrumbs`][4], and would not have been 
 [4]: https://github.com/svenanders/react-breadcrumbs
 [5]: https://github.com/svenanders/react-breadcrumbs/tree/master/AUTHORS
 [6]: http://getbem.com/
+[7]: https://github.com/FTWinston/react-breadcrumb-router/tree/v5
