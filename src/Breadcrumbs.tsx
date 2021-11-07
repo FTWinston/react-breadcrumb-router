@@ -36,8 +36,8 @@ export const Breadcrumbs: React.FC<Props> = (props) => {
                 <Item key={crumb.id} className="breadcrumbs__section">
                     <NavLink
                         end
-                        className={(active) =>
-                            active
+                        className={props =>
+                            props.isActive
                                 ? 'breadcrumbs__crumb--active'
                                 : 'breadcrumbs__crumb'
                         }
