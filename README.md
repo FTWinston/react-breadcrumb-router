@@ -5,13 +5,13 @@ A collection of [React][1] components used to generate a breadcrumb trail, for u
 ## Installation
 
 ```sh
-npm install --save react-breadcrumb-router@5.0.0
+npm install --save react-breadcrumb-router
 ```
 
-Note: Version 5 of this package has peer dependencies of `react-router-dom` v4/v5 and `react` v15+.
+Note: Version 5 of this package has peer dependencies of `react-router-dom` v6 and `react` v15+.
 Its only direct dependency is `uuid`.
 
-For react-router v6 support, please use version 6 of this package.
+For react-router v4/v5 support, please use version 5 of this package.
 
 ## Usage
 
