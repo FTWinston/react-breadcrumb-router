@@ -41,11 +41,7 @@ export const Breadcrumbs: React.FC<Props> = (props) => {
                                 ? 'breadcrumbs__crumb--active'
                                 : 'breadcrumbs__crumb'
                         }
-                        to={
-                            crumb.search
-                                ? `${crumb.pathname}${crumb.search}`
-                                : crumb.pathname
-                        }
+                        to={`${crumb.pathname}${crumb.search}${crumb.hash}`}
                     >
                         {crumb.title}
                     </NavLink>
