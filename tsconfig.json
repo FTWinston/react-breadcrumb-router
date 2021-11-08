@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "outDir": "./dist",
+    "outDir": "./dist/types",
     "noImplicitAny": true,
-    "module": "commonjs",
+    "module": "ES2015",
     "moduleResolution": "node",
     "target": "es6",
     "allowJs": true,
