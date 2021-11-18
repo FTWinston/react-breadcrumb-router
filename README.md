@@ -2,6 +2,8 @@
 
 A collection of [React][1] components used to generate a breadcrumb trail, for use with [React Router][2].
 
+[Version badge](https://badgen.net/npm/v/react-breadcrumb-router) [Minified badge](https://badgen.net/bundlephobia/min/react-breadcrumb-router) [Minzipped badge](https://badgen.net/bundlephobia/minzip/react-breadcrumb-router) [Dependencies badge](https://badgen.net/bundlephobia/dependency-count/react-breadcrumb-router) [Types badge](https://badgen.net/npm/types/react-breadcrumb-router)
+
 ## Installation
 
 ```sh
