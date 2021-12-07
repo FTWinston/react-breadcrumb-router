@@ -4,6 +4,8 @@ A collection of [React][1] components used to generate a breadcrumb trail, for u
 
 ![Version badge](https://badgen.net/npm/v/react-breadcrumb-router) ![Minified badge](https://badgen.net/bundlephobia/min/react-breadcrumb-router) ![Minzipped badge](https://badgen.net/bundlephobia/minzip/react-breadcrumb-router) ![Dependencies badge](https://badgen.net/bundlephobia/dependency-count/react-breadcrumb-router) ![Types badge](https://badgen.net/npm/types/react-breadcrumb-router)
 
+**Note**: this project has been superceded by [react-router-use-breadcrumbs][8], and is no longer supported.
+
 ## Installation
 
 ```sh
@@ -87,3 +89,4 @@ This project was adapted from [`react-breadcrumbs`][4], and would not have been 
 [5]: https://github.com/svenanders/react-breadcrumbs/tree/master/AUTHORS
 [6]: http://getbem.com/
 [7]: https://github.com/FTWinston/react-breadcrumb-router/tree/v5
+[8]: https://github.com/FTWinston/react-router-use-breadcrumbs
